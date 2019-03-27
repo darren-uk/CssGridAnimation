@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #808080;
+}
+
+.top-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+  -ms-grid-rows: 400px;
+      grid-template-rows: 400px;
+      grid-template-areas: "anim side";
+  background-color: #c0c0c0;
+  -webkit-animation-name: stretch;
+          animation-name: stretch;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes stretch {
+  from {
+    grid-template-columns: 40% 60%;
+  }
+  to {
+    grid-template-columns: 80% 20%;
+  }
+}
+
+@keyframes stretch {
+  from {
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+  }
+  to {
+    -ms-grid-columns: 80% 20%;
+        grid-template-columns: 80% 20%;
+  }
+}
+
+.anim {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: anim;
+  background-color: #8080ff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#8080ff), to(#b7b7ff));
+  background-image: linear-gradient(to right, #8080ff, #b7b7ff);
+  display: -ms-grid;
+  display: grid;
+}
+
+.anim h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  color: #fff;
+  font-size: 3.2em;
+  margin-bottom: -15px;
+}
+
+.anim img.logo {
+  margin: 0;
+  width: 100px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.side {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: side;
+  background-color: #b7b7ff;
+  padding-top: 120px;
+  border-left: 3px solid #fff;
+}
+
+.side h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.8em;
+}
+
+.bottom-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "article1 article2";
+  background-color: #008040;
+}
+
+.article1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: article1;
+  background-color: #b7b7ff;
+  padding: 40px;
+}
+
+.article2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: article2;
+  background-color: #b7b7ff;
+  padding: 40px;
+}
+
+.article2 p {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #e10027;
+  text-align: center;
+}
